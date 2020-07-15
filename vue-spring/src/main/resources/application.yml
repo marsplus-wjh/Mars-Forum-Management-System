@@ -4,6 +4,9 @@ spring:
     username: root
     password: mars
     driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT-4
 
 #    show sql and format
   jpa:
@@ -11,5 +14,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        ddl-auto: update
 server:
   port: 8181
+

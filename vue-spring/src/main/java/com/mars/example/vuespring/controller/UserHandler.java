@@ -28,6 +28,14 @@ public class UserHandler {
         }else return "false";
     }
 
+    @PutMapping("/update")
+    public String update(@RequestBody User user){
+        User result = userRepository.save(user);
+        if (result != null){
+            return "success";
+        }else return "false";
+    }
+
     @GetMapping("/UserFindById/{id}")
     public User UserFindById(@PathVariable("id") Integer id){
         User result = userRepository.findById(id).get();
